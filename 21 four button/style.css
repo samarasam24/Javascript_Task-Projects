@@ -1,0 +1,45 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+#container{
+    width: 700px;
+    background-color:  rgba(0.222, 0.222, 0.222, 0.2);
+    color: rgba(1.222, 1.222, 1.222, 0.8);
+}
+#btn-container{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(0.222, 0.222, 0.222, 0.4);
+}
+button{
+    padding: 5px 10px;
+}
+#para-container{
+    padding: 10px 25px;
+}
+p{
+    display: none;
+}
+.active{
+   display: block;
+   text-align: justify;
+}
+.active-btn{
+    background-color: green;
+    color: white;
+    border: 1px solid white;
+    box-shadow: 1px 2px 3px white;
+}
+.disabled-btn{
+    background-color: red;
+    color: orange;
+    border: 1px solid red;
+    box-shadow: 1px 2px 3px brown;
+}

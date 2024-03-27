@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    color: white;
+    background-color:#532a7f;
+}
+#container{
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+    align-items: center;
+}
+button{
+    padding: 20px 35px;
+    font-size: 30px;
+    color: #532a7f;
+}
+.epic-mix{
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+}
+i{
+    font-size: 3.5rem;
+}
+li{
+    list-style: none;
+}
+ul{
+    /* display: grid; */
+    display: none;
+    grid-template-columns: auto auto;
+    /* justify-content: center ;
+    align-items: center; */
+    border: 2px solid white;
+    padding: 2rem 3.2rem;
+    column-gap: 0px;
+    row-gap: 65px;
+    width: 700px;
+}
+span{
+    padding: 6px 6px;
+    font-size: 1.5rem; 
+    background-color: blueviolet;
+}
+p{
+    font-size: 1.5rem;
+}

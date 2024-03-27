@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>javascript validation</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&family=Kanit:wght@500&family=Montserrat:ital,wght@0,200;0,300;0,900;1,100;1,300&family=Mulish:wght@300;500&family=Newsreader:opsz,wght@6..72,600&family=Roboto:ital,wght@0,100;0,300;0,500;1,100&family=Rubik+Glitch&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div>
+      <form id="myform">
+        <h1>Log in</h1>
+        <div class="labeldiv">
+          <label for="">Name:</label>
+          <input type="text" placeholder="Name" id="username" name="username" />
+          <span id="nameerrormsg"></span>
+        </div>
+
+        <br />
+        <div class="labeldiv">
+          <label for="">Password:</label>
+          <input
+            type="password"
+            placeholder="Password"
+            id="password"
+            name="password"
+          />
+          <span id="passworderrormsg"></span>
+        </div>
+        <br />
+        <button id="submit" type="">Log in</button>
+      </form>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

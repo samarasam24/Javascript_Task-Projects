@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RentUp - Residence & Real Estate</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" href="images/favicon.png">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&family=Kanit:wght@500&family=Montserrat:ital,wght@0,200;0,300;0,900;1,100;1,300&family=Mulish:wght@300;500&family=Newsreader:opsz,wght@6..72,600&family=Playfair+Display&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:wght@100&family=Roboto:ital,wght@0,100;0,300;0,500;1,100&family=Rubik+Doodle+Shadow&family=Rubik+Glitch&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/ec912a53a4.js"
+      crossorigin="anonymous"
+    ></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- nav -->
+    <header class="fixed-top pt-0" id="nav">
+      <nav class="container-xl">
+        <div class="navbar navbar-expand-lg px-xl-3 pt-3 pb-0">
+          <a href="" class="navbar-brand me-0 col-10 col-md-6 col-lg-4 col-xl-3"
+            ><img src="images/logo.png" alt="" width="50%"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbartoggle"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbartoggle">
+            <ul class="navbar-nav">
+              <li class="nav-item pt-xl-2">
+                <a href="#" class="nav-link text-dark pe-xl-4" onclick="naviGate('home')">Home</a>
+              </li>
+              <li class="nav-item pt-xl-2">
+                <a href="#" class="nav-link text-dark pe-xl-4" onclick="naviGate('about')">About</a>
+              </li>
+              <li class="nav-item pt-xl-2">
+                <a href="#" class="nav-link text-dark pe-xl-4" onclick="naviGate('services')">Services</a>
+              </li>
+              <li class="nav-item pt-xl-2">
+                <a href="#" class="nav-link text-dark pe-xl-4" onclick="naviGate('blog')">Blog</a>
+              </li>
+              <li class="nav-item pt-xl-2">
+                <a href="#" class="nav-link text-dark pe-xl-4" onclick="naviGate('pricing')">Pricing</a>
+              </li>
+              <li class="nav-item pe-xl-5 pe-4 pt-xl-2">
+                <a href="#" class="nav-link text-dark" onclick="naviGate('contact')">Contact</a>
+              </li>
+
+              <li class="nav-item ps-xl-3 me-xl-0 pt-xl-2">
+                <a href="" class="nav-link text-dark fw-bold pt-xl-2"
+                  ><span class="text-white bg-success px-2 rounded-circle pt-0"
+                    >2</span
+                  >
+                  My List</a
+                >
+              </li>
+              <li class="nav-item ps-xl-1">
+                <button class="btn btn-success py-xl-3 px-xl-4">
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign In
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- search -->
+    <section >
+      <div
+      id="search"
+      class="d-flex flex-column align-items-center"
+      style="padding: 17%"
+    >
+      <h1 class="text-white text-center w-75 display-3 fw-bold mt-5">
+        Search Your Next Home
+      </h1>
+      <h6 class="text-white">
+        Find new & featured property located in your local city.
+      </h6>
+      <div class="mt-5 bg-white d-flex gap-5 px-5 rounded px-2">
+        <div class="border-end border-1 py-3 pe-3">
+          <label for="" class="text-secondary">City/Street</label> <br />
+          <input
+            type="text"
+            class="rounded border px-3 p-1"
+            placeholder="Location"
+          />
+        </div>
+        <div class="border-end border-1 py-3 pe-3">
+          <label for="" class="text-secondary">Property Type</label><br />
+          <input
+            type="text"
+            class="rounded border px-3 p-1"
+            placeholder="Property Type"
+          />
+        </div>
+        <div class="border-end border-1 py-3 pe-3">
+          <label for="" class="text-secondary">Price Range</label><br />
+          <input
+            type="text"
+            class="rounded border px-3 p-1"
+            placeholder="Price Range"
+          />
+        </div>
+        <div class="d-flex align-items-center gap-4 py-3 pe-3">
+          <h6 class="text-dark">Advance Filter</h6>
+          <button type="button" class="btn btn-success p-2 px-4">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    </section>
+    <!-- property type -->
+    <section >
+      <div class="text-center p-5" id="cards">
+        <h1 class="pt-5">Featured Property Types</h1>
+        <h6 class="text-secondary">Find All Type of Property.</h6>
+        <div class="d-flex container-xl gap-4 mt-5 mb-5">
+          <div class="shadow px-0 py-4">
+            <img src="images/1.png"  alt="" width="30%"/>
+            <h6 class="fw-bold pt-4">Family House</h6>
+            <p class="">122 Property</p>
+          </div>
+          <div class="shadow  py-4">
+            <img src="images/2.png" class="" alt="" width="30%"/>
+            <h6 class="fw-bold pt-4">House & Villa</h6>
+            <p class="">155 Property</p>
+          </div>
+          <div class="shadow  py-4">
+            <img src="images/3.png" class="" alt="" width="30%"/>
+            <h6 class="fw-bold pt-4">Apartment</h6>
+            <p class="">300 Property</p>
+          </div>
+          <div class="shadow  py-4">
+            <img src="images/4.png" class="" alt="" width="30%"/>
+            <h6 class="fw-bold pt-4">Office & Studio</h6>
+            <p class="">80 Property</p>
+          </div>
+          <div class="shadow py-4 ">
+            <img src="images/5.png" class="" alt="" width="30%"/>
+            <h6 class="fw-bold pt-4">Villa & Condo</h6>
+            <p class="">80 Property</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- recent property list -->
+    <section >
+      <div class="text-center justify-content-center d-flex flex-column align-items-center" id="real-card">
+        <h1>Recent Property Listed</h1>
+      <div class="px-5">
+        <p class="text-secondary px-5 mx-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+      </div>
+      <div class="row  mt-5 gap-4 justify-content-center container-xl">
+        <div class="col  p-0 mb-4 shadow">
+          <img src="images/p-1.png" alt="" class="" width="100%">
+          <div class="d-flex justify-content-between pt-3 align-items-center">
+            <h6 class="text-warning  border border-1 px-3 py-1 ms-4" id="warn">For Rent</h6>
+            <p class=" mt-2 fs-4 me-4" ><i class='bx bxs-heart' style="color: #bec7d8;"></i></p>
+          </div>
+          <div class="text-start border-bottom mx-4" >
+            <h6>Red Carpet Real Estate</h6>
+            <p><i class="fa-solid fa-location-dot" style="color: #bec7d8;"></i> 210 Zirak Road, Canada</p>
+          </div>
+          <div class="d-flex justify-content-between px-4 py-2 align-items-center">
+           <div>
+            <button class="btn  rounded-pill text-white p-3 pb-2 px-4" style="background-color: #27ae60;"><h5 class="fw-bold">$3,700</h5></button> <span>/sqft</span>
+           </div>
+            <h6  class="pe-3">Apartment</h6>
+          </div>
+        </div>
+        <div class=" col p-0 shadow mb-4">
+          <img src="images/p-2.png" alt="" class="" width="100%">
+          <div class="d-flex justify-content-between pt-3 align-items-center">
+            <h6 class="text-success  border border-1 px-3 py-1 ms-4" id="success">For Sale</h6>
+            <p class="text-secondary mt-2 fs-4 me-4"><i class='bx bxs-heart' style="color: #bec7d8;"></i></p>
+          </div>
+          <div class="text-start border-bottom mx-4">
+            <h6>Fairmount Properties</h6>
+            <p><i class="fa-solid fa-location-dot" style="color: #bec7d8;"></i> 5698 Zirak Road, NewYork</p>
+          </div>
+          <div class="d-flex justify-content-between px-4 py-2 align-items-center">
+            <div>
+             <button class="btn  rounded-pill text-white p-3 pb-2 px-4" style="background-color: #27ae60;"><h5 class="fw-bold">$9,750</h5></button> <span>/sqft</span>
+            </div>
+             <h6  class="pe-3">Condos</h6>
+           </div>
+        </div>
+        <div class=" col p-0 shadow mb-4">
+          <img src="images/p-3.png" alt="" class="" width="100%">
+          <div class="d-flex justify-content-between pt-3 align-items-center">
+            <h6 class="text-warning  border border-1 px-3 py-1 ms-4" id="warn">For Rent</h6>
+            <p class="text-secondary mt-2 fs-4 me-4"><i class='bx bxs-heart' style="color: #bec7d8;"></i></p>
+          </div>
+          <div class="text-start border-bottom mx-4">
+            <h6>The Real Estate Corner</h6>
+            <p><i class="fa-solid fa-location-dot" style="color: #bec7d8;"></i> 5624 Mooker Market, USA</p>
+          </div>
+          <div class="d-flex justify-content-between px-4 py-2 align-items-center">
+            <div>
+             <button class="btn  rounded-pill text-white p-3 pb-2 px-4" style="background-color: #27ae60;"><h5 class="fw-bold">$5,860</h5></button> <span>/sqft</span>
+            </div>
+             <h6  class="pe-3">Offices</h6>
+           </div>
+        </div>
+      </div>
+      <div class="row gap-4 justify-content-center container-xl">
+        <div class=" col p-0 shadow" >
+          <img src="images/p-4.png" alt="" class="" width="100%">
+          <div class="d-flex justify-content-between pt-3 align-items-center">
+            <h6 class="text-success  border border-1 px-3 py-1 ms-4" id="success">For Sale</h6>
+            <p class="text-secondary mt-2 fs-4 me-4"><i class='bx bxs-heart' style="color: #bec7d8;"></i></p>
+          </div>
+          <div class="text-start border-bottom mx-4">
+            <h6>Herringbone Realty</h6>
+            <p><i class="fa-solid fa-location-dot" style="color: #bec7d8;"></i> 5621 Liverpool, London</p>
+          </div>
+          <div class="d-flex justify-content-between px-4 py-2 align-items-center">
+            <div>
+             <button class="btn  rounded-pill text-white p-3 pb-2 px-4" style="background-color: #27ae60;"><h5 class="fw-bold">$7,540</h5></button> <span>/sqft</span>
+            </div>
+             <h6  class="pe-3">Homes & Villas</h6>
+           </div>
+        </div>
+       <div class=" col p-0 shadow">
+          <img src="images/p-5.png" alt="" class="" width="100%">
+          <div class="d-flex justify-content-between pt-3 align-items-center">
+            <h6 class="text-warning  border border-1 px-3 py-1 ms-4" id="warn">For Rent</h6>
+            <p class="text-secondary mt-2 fs-4 me-4"><i class='bx bxs-heart' style="color: #bec7d8;"></i></p>
+          </div>
+          <div class="text-start border-bottom mx-4">
+            <h6>Brick Lane Realty</h6>
+            <p><i class="fa-solid fa-location-dot" style="color: #bec7d8;"></i> 210 Montreal Road, Canada</p>
+          </div>
+          <div class="d-flex justify-content-between px-4 py-2 align-items-center">
+            <div>
+             <button class="btn  rounded-pill text-white p-3 pb-2 px-4" style="background-color: #27ae60;"><h5 class="fw-bold">$4,850</h5></button> <span>/sqft</span>
+            </div>
+             <h6  class="pe-3">Commerical</h6>
+           </div>
+        </div> 
+      <div class=" col p-0 shadow">
+          <img src="images/p-6.png" alt="" class="" width="100%">
+          <div class="d-flex justify-content-between pt-3 align-items-center">
+            <h6 class="text-success  border border-1 px-3 py-1 ms-4" id="success">For Sale</h6>
+            <p class="text-secondary mt-2 fs-4 me-4"><i class='bx bxs-heart' style="color: #bec7d8;"></i></p>
+          </div>
+          <div class="text-start border-bottom mx-4">
+            <h6>Banyon Tree Realty</h6>
+            <p><i class="fa-solid fa-location-dot" style="color: #bec7d8;"></i> 210 Zirak Road, Canada</p>
+          </div>
+          <div class="d-flex justify-content-between px-4 py-2 align-items-center">
+            <div>
+             <button class="btn  rounded-pill text-white p-3 pb-2 px-4" style="background-color: #27ae60;"><h5 class="fw-bold">$2,742</h5></button> <span>/sqft</span>
+            </div>
+             <h6  class="pe-3">Apartment</h6>
+           </div>
+        </div>
+      </div>
+     
+      </div>
+    </section>
+    <section id="awards" class="p-5  ">
+      <div class="text-white text-center d-flex justify-content-center flex-column align-items-center mt-4">
+        <h6 class="text-success  ">Our Awards</h6>
+        <p class="fs-3 w-50 px-2 text-center lh-base">Over 1,24,000+ Happy User Bieng With Us Still They Love Our Services</p>
+        <div class="row container-xl row-cols-4 mt-5 pt-5 pb-4">
+          <div class=" d-flex flex-column justify-content-center align-items-center">
+            <div class="border-style">
+              <i class="fa-solid fa-trophy " id="icon"></i>
+            </div>
+            <h1 class="fw-bold display-5">32 M</h1>
+            <h6 class="text-secondary">Blue Burmin Award</h6>
+          </div>
+          <div class="d-flex flex-column justify-content-center align-items-center">
+            <div class="border-style">
+              <i class="fa-solid fa-briefcase" id="icon"></i>
+            </div>
+            <h1 class="fw-bold display-5">43 M</h1>
+            <h6 class="text-secondary">Mimo X11 Award</h6>
+          </div>
+          <div class="d-flex flex-column justify-content-center align-items-center">
+            <div class="border-style">
+              <i class="fa-solid fa-lightbulb " id="icon"></i>
+            </div>
+            <h1 class="fw-bold display-5">51 M</h1>
+            <h6 class="text-secondary">Australian UGC Award</h6>
+          </div>
+          <div class="d-flex flex-column justify-content-center align-items-center">
+            <div class="border-style">
+              <i class="fa-solid fa-heart " id="icon"></i>
+            </div>
+            <h1 class="fw-bold display-5">42 M</h1>
+            <h6 class="text-secondary">IITCA Green Award</h6>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="mt-5 mb-5 pb-5  pt-4 d-flex flex-column justify-content-center align-items-center text-center">
+        <h2 class="fw-bold">Explore By Location</h2>
+        <p class="w-50 text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+        <div class="container-xl row row-cols-3">
+          <div class="mb-5" id="relat">
+            <img src="images/city-1.png" alt="" width="100%" class="rounded">
+            <div class="over-above">
+              <h5>New Orleans, Louisiana</h5>
+              <p>
+                <label>12 Villas</label>
+                <label>07 Offices</label>
+                <label>10 Apartments</label>
+              </p>
+
+            </div>
+          </div>
+          <div id="relat">
+            <img src="images/city-2.png" alt="" width="100%" class="rounded">
+            <div class="over-above">
+              <h5>Jerrsy, United State</h5>
+              <p>
+                <label>12 Villas</label>
+                <label>07 Offices</label>
+                <label>10 Apartments</label>
+              </p>
+
+            </div>
+          </div>
+          <div id="relat">
+            <img src="images/city-3.png" alt="" width="100%" class="rounded">
+            <div class="over-above">
+              <h5>Liverpool, London</h5>
+              <p>
+                <label>12 Villas</label>
+                <label>07 Offices</label>
+                <label>10 Apartments</label>
+              </p>
+
+            </div>
+          </div>
+        
+          <div id="relat">
+            <img src="images/city-4.png" alt="" width="100%" class="rounded">
+            <div class="over-above">
+              <h5>NewYork, United States</h5>
+              <p>
+                <label>12 Villas</label>
+                <label>07 Offices</label>
+                <label>10 Apartments</label>
+              </p>
+
+            </div>
+          </div>
+          <div id="relat">
+            <img src="images/city-5.png" alt="" width="100%" class="rounded">
+            <div class="over-above">
+              <h5>Montreal, Canada</h5>
+              <p>
+                <label>12 Villas</label>
+                <label>07 Offices</label>
+                <label>10 Apartments</label>
+              </p>
+
+            </div>
+          </div>
+          <div id="relat">
+            <img src="images/city-6.png" alt="" width="100%" class="rounded">
+            <div class="over-above">
+              <h5>California, USA</h5>
+              <p>
+                <label>12 Villas</label>
+                <label>07 Offices</label>
+                <label>10 Apartments</label>
+              </p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="our-agent" class="pt-1">
+      <div class="text-center mt-5 pt-5 pb-5 d-flex justify-content-center flex-column align-items-center">
+        <h1 >Our Featured Agents</h1>
+        <p class="w-50 text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+        <div class="row gap-4 justify-content-between container-xl">
+          <div class="col bg-white rounded  d-flex flex-column justify-content-start align-items-start p-5">
+            <div>
+              <h6 class="text-white mt-0 px-4  py-3 rounded-pill" style="background-color: #FF6922;"> 50 Listings</h6>
+            </div>
+            <div class="d-flex justify-content-center flex-column align-items-center mt-2">
+                  <img src="images/team-1.jpg" alt="" class="rounded-circle border border-5 p-2" width="50%">
+                  <p class="mt-3 text-secondary"> <i class="fa-solid fa-location-dot" style="color: #bec7d8;"></i>  Liverpool, Canada</p>
+                  <p class="fw-bold">Sargam S. Singh</p>
+                  <div class="d-flex gap-2">
+                    <div class="px-3 py-2 rounded-circle" style="background-color: #f4f5f7;"><i class="fa-brands fa-facebook-f text-secondary"></i></div>
+                    <div class="px-3 py-2 rounded-circle" style="background-color: #f4f5f7;"><i class="fa-brands fa-linkedin text-secondary"></i></div>
+                    <div class="px-3 py-2 rounded-circle" style="background-color: #f4f5f7;"><i class="fa-brands fa-twitter text-secondary"></i></div>
+                    <div class="px-3 py-2 rounded-circle" style="background-color: #f4f5f7;"><i class="fa-brands fa-instagram text-secondary"></i></div>
+                  </div>
+                  <div class="d-flex justify-content-between gap-5  mt-4 align-items-center">
+                    <div class="bg-success text-white py-3 px-4 rounded"><i class="fa-solid fa-envelope fs-4"></i> Message</div>
+                    <div class="bg-dark text-white p-3 px-4 rounded"><i class="fa-solid fa-phone-flip"></i></div>
+                  </div>
+            </div>
+          </div>
+          <div class="col  bg-white rounded d-flex flex-column justify-content-start align-items-start p-5">
+            <div>
+              <h6 class="text-white mt-0 px-4  py-3 rounded-pill" style="background-color: #FF6922;"> 70 Listings</h6>
+            </div>
+            <div class="d-flex flex-column align-items-center justify-content-center mt-2">
+              <img src="images/team-2.jpg" alt="" class="rounded-circle border border-5 p-2" width="50%">
+              <p class="mt-3 text-secondary"><i class="fa-solid fa-location-dot" style="color: #bec7d8;"></i>  Montreal, Canada</p>
+              <p class="fw-bold">Harijeet M. Siller</p>
+              <div class="d-flex gap-2">
+                <div class="px-3 py-2 rounded-circle" style="background-color: #f4f5f7;"><i class="fa-brands fa-facebook-f text-secondary"></i></div>
+                <div class="px-3 py-2 rounded-circle" style="background-color: #f4f5f7;"><i class="fa-brands fa-linkedin text-secondary"></i></div>
+                <div class="px-3 py-2 rounded-circle" style="background-color: #f4f5f7;"><i class="fa-brands fa-twitter text-secondary"></i></div>
+                <div class="px-3 py-2 rounded-circle" style="background-color: #f4f5f7;"><i class="fa-brands fa-instagram text-secondary"></i></div>
+              </div>
+              <div class="d-flex justify-content-between gap-5  mt-4 align-items-center">
+                <div class="bg-success text-white py-3 px-4 rounded"><i class="fa-solid fa-envelope fs-4"></i> Message</div>
+                <div class="bg-dark text-white p-3 px-4 rounded"><i class="fa-solid fa-phone-flip"></i></div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col  bg-white rounded  d-flex flex-column justify-content-start align-items-start p-5">
+            <div>
+              <h6 class="text-white mt-0 px-4  py-3 rounded-pill" style="background-color: #FF6922;"> 80 Listings</h6>
+            </div>
+            <div class="d-flex justify-content-center flex-column align-items-center mt-2">
+              <img src="images/team-3.jpg" alt="" class="rounded-circle border border-5 p-2" width="50%">
+              <p class="mt-3 text-secondary"><i class="fa-solid fa-location-dot" style="color: #bec7d8;"></i>  Denever, USA</p>
+              <p class="fw-bold">Anna K. Young</p>
+              <div class="d-flex gap-2">
+                <div class="px-3 py-2 rounded-circle" style="background-color: #f4f5f7;"><i class="fa-brands fa-facebook-f text-secondary"></i></div>
+                <div class="px-3 py-2 rounded-circle" style="background-color: #f4f5f7;"><i class="fa-brands fa-linkedin text-secondary"></i></div>
+                <div class="px-3 py-2 rounded-circle" style="background-color: #f4f5f7;"><i class="fa-brands fa-twitter text-secondary"></i></div>
+                <div class="px-3 py-2 rounded-circle" style="background-color: #f4f5f7;"><i class="fa-brands fa-instagram text-secondary"></i></div>
+              </div>
+              <div class="d-flex justify-content-between gap-5  mt-4 align-items-center">
+                <div class="bg-success text-white py-3 px-4 rounded"><i class="fa-solid fa-envelope fs-4"></i> Message</div>
+                <div class="bg-dark text-white p-3 px-4 rounded"><i class="fa-solid fa-phone-flip"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row gap-4 justify-content-between container-xl mt-4 pb-4">
+          <div class="col bg-white rounded  d-flex flex-column justify-content-start align-items-start p-5">
+            <div>
+              <h6 class="text-white mt-0 px-4  py-3 rounded-pill" style="background-color: #FF6922;"> 51 Listings</h6>
+            </div>
+            <div class="d-flex justify-content-center flex-column align-items-center mt-2">
+                  <img src="images/team-4.jpg" alt="" class="rounded-circle border border-5 p-2" width="50%">
+                  <p class="mt-3 text-secondary"> <i class="fa-solid fa-location-dot" style="color: #bec7d8;"></i>  2272 Briarwood Drive</p>
+                  <p class="fw-bold">Michael P. Grimaldo</p>
+                  <div class="d-flex gap-2">
+                    <div class="px-3 py-2 rounded-circle" style="background-color: #f4f5f7;"><i class="fa-brands fa-facebook-f text-secondary"></i></div>
+                    <div class="px-3 py-2 rounded-circle" style="background-color: #f4f5f7;"><i class="fa-brands fa-linkedin text-secondary"></i></div>
+                    <div class="px-3 py-2 rounded-circle" style="background-color: #f4f5f7;"><i class="fa-brands fa-twitter text-secondary"></i></div>
+                    <div class="px-3 py-2 rounded-circle" style="background-color: #f4f5f7;"><i class="fa-brands fa-instagram text-secondary"></i></div>
+                  </div>
+                  <div class="d-flex justify-content-between gap-5  mt-4 align-items-center">
+                    <div class="bg-success text-white py-3 px-4 rounded"><i class="fa-solid fa-envelope fs-4"></i> Message</div>
+                    <div class="bg-dark text-white p-3 px-4 rounded"><i class="fa-solid fa-phone-flip"></i></div>
+                  </div>
+            </div>
+          </div>
+          <div class="col  bg-white rounded d-flex flex-column justify-content-start align-items-start p-5">
+            <div>
+              <h6 class="text-white mt-0 px-4  py-3 rounded-pill" style="background-color: #FF6922;"> 42 Listings</h6>
+            </div>
+            <div class="d-flex flex-column align-items-center justify-content-center mt-2">
+              <img src="images/team-5.jpg" alt="" class="rounded-circle border border-5 p-2" width="50%">
+              <p class="mt-3 text-secondary"><i class="fa-solid fa-location-dot" style="color: #bec7d8;"></i>  2272 Briarwood Drive</p>
+              <p class="fw-bold">Michael P. Grimaldo</p>
+              <div class="d-flex gap-2">
+                <div class="px-3 py-2 rounded-circle" style="background-color: #f4f5f7;"><i class="fa-brands fa-facebook-f text-secondary"></i></div>
+                <div class="px-3 py-2 rounded-circle" style="background-color: #f4f5f7;"><i class="fa-brands fa-linkedin text-secondary"></i></div>
+                <div class="px-3 py-2 rounded-circle" style="background-color: #f4f5f7;"><i class="fa-brands fa-twitter text-secondary"></i></div>
+                <div class="px-3 py-2 rounded-circle" style="background-color: #f4f5f7;"><i class="fa-brands fa-instagram text-secondary"></i></div>
+              </div>
+              <div class="d-flex justify-content-between gap-5  mt-4 align-items-center">
+                <div class="bg-success text-white py-3 px-4 rounded"><i class="fa-solid fa-envelope fs-4"></i> Message</div>
+                <div class="bg-dark text-white p-3 px-4 rounded"><i class="fa-solid fa-phone-flip"></i></div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col  bg-white rounded  d-flex flex-column justify-content-start align-items-start p-5">
+            <div>
+              <h6 class="text-white mt-0 px-4  py-3 rounded-pill" style="background-color: #FF6922;"> 38 Listings</h6>
+            </div>
+            <div class="d-flex justify-content-center flex-column align-items-center mt-2">
+              <img src="images/team-5.jpg" alt="" class="rounded-circle border border-5 p-2" width="50%">
+              <p class="mt-3 text-secondary"><i class="fa-solid fa-location-dot" style="color: #bec7d8;"></i>  Montreal, USA</p>
+              <p class="fw-bold">Adam K. Jollio</p>
+              <div class="d-flex gap-2">
+                <div class="px-3 py-2 rounded-circle" style="background-color: #f4f5f7;"><i class="fa-brands fa-facebook-f text-secondary"></i></div>
+                <div class="px-3 py-2 rounded-circle" style="background-color: #f4f5f7;"><i class="fa-brands fa-linkedin text-secondary"></i></div>
+                <div class="px-3 py-2 rounded-circle" style="background-color: #f4f5f7;"><i class="fa-brands fa-twitter text-secondary"></i></div>
+                <div class="px-3 py-2 rounded-circle" style="background-color: #f4f5f7;"><i class="fa-brands fa-instagram text-secondary"></i></div>
+              </div>
+              <div class="d-flex justify-content-between gap-5  mt-4 align-items-center">
+                <div class="bg-success text-white py-3 px-4 rounded"><i class="fa-solid fa-envelope fs-4"></i> Message</div>
+                <div class="bg-dark text-white p-3 px-4 rounded"><i class="fa-solid fa-phone-flip"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+     </div>
+    </section>
+    <section>
+      <div class="mb-5">
+        
+      <div class="d-flex flex-column justify-content-center text-center pt-5 mt-4  align-items-center">
+        <h1 class="display-3 fw-bold">Select Your Package</h1>
+        <p class="w-50 text-secondary">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores</p>
+      </div>
+      <div class="d-flex  justify-content-center gap-5 pb-5">
+        <div class=" mt-5 pt-3 shadow text-center d-flex flex-column justify-content-center align-items-center p-5 mb-5">
+          <h1>Basic</h1>
+          <h2>$<span class="display-2 fw-bold">29</span></h2>
+          <p>per user, per month</p>
+         <div class="d-flex flex-column justify-content-start align-items-start">
+         
+          <p><span  id="success" class="rounded-circle py-1"><i class="fa-solid fa-check  p-2 text-success "></i></span>  99.5% Uptime Guarantee</p>
+          <p><span  id="success" class="rounded-circle py-1"><i class="fa-solid fa-check  p-2 text-success "></i></span>  120GB CDN Bandwidth</p>
+          <p><span  id="success" class="rounded-circle py-1"><i class="fa-solid fa-check  p-2 text-success "></i></span>  5GB Cloud Storage</p>
+          <p><span  id="warn" class="rounded-circle py-1"><i class="fa-solid fa-x  p-2 text-danger "></i></span>   Personal Help Support</p>
+          <p><span  id="warn" class="rounded-circle py-1"><i class="fa-solid fa-x  p-2 text-danger "></i></span>   Enterprise SLA</p>
+         </div>
+         <div class="border border-5 rounded-pill p-2 px-5 mt-4">
+          <h4 class="text-success">Start Basic</h4>
+         </div>
+        </div>
+        <div class="text-center shadow p-5">
+         <div class="d-flex flex-column justify-content-center align-items-center">
+          <h5 class="text-white rounded-pill px-4 py-3" style="background-color: #FF6922;">Best Value</h5>
+          <h1>Standard</h1>
+          <h2>$<span class="display-2 fw-bold">49</span></h2>
+          <p>per user, per month</p>
+         </div>
+         <div class="d-flex flex-column justify-content-start align-items-start">
+         
+          <p><span  id="success" class="rounded-circle py-1"><i class="fa-solid fa-check  p-2 text-success "></i></span>  99.5% Uptime Guarantee</p>
+          <p><span  id="success" class="rounded-circle py-1"><i class="fa-solid fa-check  p-2 text-success "></i></span>  120GB CDN Bandwidth</p>
+          <p><span  id="success" class="rounded-circle py-1"><i class="fa-solid fa-check  p-2 text-success "></i></span>  5GB Cloud Storage</p>
+          <p><span  id="success" class="rounded-circle py-1"><i class="fa-solid fa-check  p-2 text-success "></i></span>   Personal Help Support</p>
+          <p><span  id="warn" class="rounded-circle py-1"><i class="fa-solid fa-x  p-2 text-danger "></i></span>   Enterprise SLA</p>
+         </div>
+         <div class=" rounded-pill p-3 px-5 mt-4 bg-success">
+          <h4 class="text-white">Start Standard</h4>
+         </div>
+        </div>
+        <div class="text-center mt-5 pt-3 shadow p-5 mb-5 ">
+          <h1>Platinum</h1>
+          <h2>$<span class="display-2 fw-bold">79</span></h2>
+          <p>2 user, per month</p>
+          <div class="d-flex flex-column justify-content-start align-items-start">
+         
+            <p><span  id="success" class="rounded-circle py-1"><i class="fa-solid fa-check  p-2 text-success "></i></span>  99.5% Uptime Guarantee</p>
+            <p><span  id="success" class="rounded-circle py-1"><i class="fa-solid fa-check  p-2 text-success "></i></span>  120GB CDN Bandwidth</p>
+            <p><span  id="success" class="rounded-circle py-1"><i class="fa-solid fa-check  p-2 text-success "></i></span>  5GB Cloud Storage</p>
+            <p><span  id="success" class="rounded-circle py-1"><i class="fa-solid fa-check  p-2 text-success "></i></span>   Personal Help Support</p>
+            <p><span  id="warn" class="rounded-circle py-1"><i class="fa-solid fa-x  p-2 text-danger "></i></span>   Enterprise SLA</p>
+           </div>
+           <div class="border border-5 rounded-pill p-2 px-5 mt-4">
+            <h4 class="text-success">Start Platinum</h4>
+           </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <section id="about">
+     <div id="back">
+      <div id="cont">
+        <div id="cont-data">
+          <h5>About Us</h5>
+          <h1 class=" fw-bold">About Us - Who We Are?</h1>
+        </div>
+      </div>
+     </div>
+     <div class=" d-flex justify-content-center " id="immio">
+      <div>
+        <h1 class="fw-bold">Our Agency Story</h1>
+        <h5 class="text-secondary mt-2">Check out our company story and work process</h5>
+        <p class="lh-lg fs-6 pe-5 me-5 mt-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p class="lh-lg fs-6 pe-5 me-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+        <div class="bg-success rounded-pill text-white col-5 mt-5 text-center py-3">
+        <h3 class="">  More About Us</h3>
+        </div>
+      </div>
+      <div>
+        <img src="images/immio.jpg" alt="" width="100%">
+      </div>
+
+     </div>
+
+    </section>
+    <section id="services" >
+      <div id="serv-img">
+        <div id="color-back">
+          <div id="ser-cont">
+            <h5>Services</h5>
+            <h1>Services -All Services</h1>
+          </div>
+        </div>
+
+      </div>
+      <div class="text-center">
+        
+      <div class="d-flex container-xl gap-4 mt-5 mb-5">
+        <div class="shadow px-0 py-4">
+          <img src="images/1.png"  alt="" width="30%"/>
+          <h6 class="fw-bold pt-4">Family House</h6>
+          <p class="">122 Property</p>
+        </div>
+        <div class="shadow  py-4">
+          <img src="images/2.png" class="" alt="" width="30%"/>
+          <h6 class="fw-bold pt-4">House & Villa</h6>
+          <p class="">155 Property</p>
+        </div>
+        <div class="shadow  py-4">
+          <img src="images/3.png" class="" alt="" width="30%"/>
+          <h6 class="fw-bold pt-4">Apartment</h6>
+          <p class="">300 Property</p>
+        </div>
+        <div class="shadow  py-4">
+          <img src="images/4.png" class="" alt="" width="30%"/>
+          <h6 class="fw-bold pt-4">Office & Studio</h6>
+          <p class="">80 Property</p>
+        </div>
+        <div class="shadow py-4 ">
+          <img src="images/5.png" class="" alt="" width="30%"/>
+          <h6 class="fw-bold pt-4">Villa & Condo</h6>
+          <p class="">80 Property</p>
+        </div>
+      </div>
+      </div>
+    </section>
+    <section id="blog">
+      <div id="blog-back">
+         <div id="blog-blur">
+          <div id="blog-cont">
+            <h5>Blog</h5>
+            <h1>Blog Grid - Our Blogs</h1>
+          </div>
+         </div>
+      </div>
+    <div class="d-flex flex-column justify-content-center align-items-center mb-5">
+      <div class="row  mt-5 gap-4 justify-content-center container-xl">
+        <div class="col  p-0 mb-4 shadow">
+          <img src="images/p-1.png" alt="" class="" width="100%">
+          <div class="d-flex justify-content-between pt-3 align-items-center">
+            <h6 class="text-warning  border border-1 px-3 py-1 ms-4" id="warn">For Rent</h6>
+            <p class=" mt-2 fs-4 me-4" ><i class='bx bxs-heart' style="color: #bec7d8;"></i></p>
+          </div>
+          <div class="text-start border-bottom mx-4" >
+            <h6>Red Carpet Real Estate</h6>
+            <p><i class="fa-solid fa-location-dot" style="color: #bec7d8;"></i> 210 Zirak Road, Canada</p>
+          </div>
+          <div class="d-flex justify-content-between px-4 py-2 align-items-center">
+           <div>
+            <button class="btn  rounded-pill text-white p-3 pb-2 px-4" style="background-color: #27ae60;"><h5 class="fw-bold">$3,700</h5></button> <span>/sqft</span>
+           </div>
+            <h6  class="pe-3">Apartment</h6>
+          </div>
+        </div>
+        <div class=" col p-0 shadow mb-4">
+          <img src="images/p-2.png" alt="" class="" width="100%">
+          <div class="d-flex justify-content-between pt-3 align-items-center">
+            <h6 class="text-success  border border-1 px-3 py-1 ms-4" id="success">For Sale</h6>
+            <p class="text-secondary mt-2 fs-4 me-4"><i class='bx bxs-heart' style="color: #bec7d8;"></i></p>
+          </div>
+          <div class="text-start border-bottom mx-4">
+            <h6>Fairmount Properties</h6>
+            <p><i class="fa-solid fa-location-dot" style="color: #bec7d8;"></i> 5698 Zirak Road, NewYork</p>
+          </div>
+          <div class="d-flex justify-content-between px-4 py-2 align-items-center">
+            <div>
+             <button class="btn  rounded-pill text-white p-3 pb-2 px-4" style="background-color: #27ae60;"><h5 class="fw-bold">$9,750</h5></button> <span>/sqft</span>
+            </div>
+             <h6  class="pe-3">Condos</h6>
+           </div>
+        </div>
+        <div class=" col p-0 shadow mb-4">
+          <img src="images/p-3.png" alt="" class="" width="100%">
+          <div class="d-flex justify-content-between pt-3 align-items-center">
+            <h6 class="text-warning  border border-1 px-3 py-1 ms-4" id="warn">For Rent</h6>
+            <p class="text-secondary mt-2 fs-4 me-4"><i class='bx bxs-heart' style="color: #bec7d8;"></i></p>
+          </div>
+          <div class="text-start border-bottom mx-4">
+            <h6>The Real Estate Corner</h6>
+            <p><i class="fa-solid fa-location-dot" style="color: #bec7d8;"></i> 5624 Mooker Market, USA</p>
+          </div>
+          <div class="d-flex justify-content-between px-4 py-2 align-items-center">
+            <div>
+             <button class="btn  rounded-pill text-white p-3 pb-2 px-4" style="background-color: #27ae60;"><h5 class="fw-bold">$5,860</h5></button> <span>/sqft</span>
+            </div>
+             <h6  class="pe-3">Offices</h6>
+           </div>
+        </div>
+        </div>
+        <div class="row gap-4 justify-content-center container-xl">
+          <div class=" col p-0 shadow" >
+            <img src="images/p-4.png" alt="" class="" width="100%">
+            <div class="d-flex justify-content-between pt-3 align-items-center">
+              <h6 class="text-success  border border-1 px-3 py-1 ms-4" id="success">For Sale</h6>
+              <p class="text-secondary mt-2 fs-4 me-4"><i class='bx bxs-heart' style="color: #bec7d8;"></i></p>
+            </div>
+            <div class="text-start border-bottom mx-4">
+              <h6>Herringbone Realty</h6>
+              <p><i class="fa-solid fa-location-dot" style="color: #bec7d8;"></i> 5621 Liverpool, London</p>
+            </div>
+            <div class="d-flex justify-content-between px-4 py-2 align-items-center">
+              <div>
+               <button class="btn  rounded-pill text-white p-3 pb-2 px-4" style="background-color: #27ae60;"><h5 class="fw-bold">$7,540</h5></button> <span>/sqft</span>
+              </div>
+               <h6  class="pe-3">Homes & Villas</h6>
+             </div>
+          </div>
+         <div class=" col p-0 shadow">
+            <img src="images/p-5.png" alt="" class="" width="100%">
+            <div class="d-flex justify-content-between pt-3 align-items-center">
+              <h6 class="text-warning  border border-1 px-3 py-1 ms-4" id="warn">For Rent</h6>
+              <p class="text-secondary mt-2 fs-4 me-4"><i class='bx bxs-heart' style="color: #bec7d8;"></i></p>
+            </div>
+            <div class="text-start border-bottom mx-4">
+              <h6>Brick Lane Realty</h6>
+              <p><i class="fa-solid fa-location-dot" style="color: #bec7d8;"></i> 210 Montreal Road, Canada</p>
+            </div>
+            <div class="d-flex justify-content-between px-4 py-2 align-items-center">
+              <div>
+               <button class="btn  rounded-pill text-white p-3 pb-2 px-4" style="background-color: #27ae60;"><h5 class="fw-bold">$4,850</h5></button> <span>/sqft</span>
+              </div>
+               <h6  class="pe-3">Commerical</h6>
+             </div>
+          </div> 
+        <div class=" col p-0 shadow">
+            <img src="images/p-6.png" alt="" class="" width="100%">
+            <div class="d-flex justify-content-between pt-3 align-items-center">
+              <h6 class="text-success  border border-1 px-3 py-1 ms-4" id="success">For Sale</h6>
+              <p class="text-secondary mt-2 fs-4 me-4"><i class='bx bxs-heart' style="color: #bec7d8;"></i></p>
+            </div>
+            <div class="text-start border-bottom mx-4">
+              <h6>Banyon Tree Realty</h6>
+              <p><i class="fa-solid fa-location-dot" style="color: #bec7d8;"></i> 210 Zirak Road, Canada</p>
+            </div>
+            <div class="d-flex justify-content-between px-4 py-2 align-items-center">
+              <div>
+               <button class="btn  rounded-pill text-white p-3 pb-2 px-4" style="background-color: #27ae60;"><h5 class="fw-bold">$2,742</h5></button> <span>/sqft</span>
+              </div>
+               <h6  class="pe-3">Apartment</h6>
+             </div>
+          </div>
+        </div>
+    </div>
+    </section>
+    <section id="pricing">
+      <div id="pricing-img">
+        <div id="pricing-blur">
+          <div>
+            <h5>30 days money back guarantee</h5>
+            <h1>No Extra Fees. Friendly Support</h1>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex  justify-content-center gap-5 pb-5 mt-5">
+        <div class=" mt-5 pt-3 shadow text-center d-flex flex-column justify-content-center align-items-center p-5 mb-5">
+          <h1>Basic</h1>
+          <h2>$<span class="display-2 fw-bold">29</span></h2>
+          <p>per user, per month</p>
+         <div class="d-flex flex-column justify-content-start align-items-start">
+         
+          <p><span  id="success" class="rounded-circle py-1"><i class="fa-solid fa-check  p-2 text-success "></i></span>  99.5% Uptime Guarantee</p>
+          <p><span  id="success" class="rounded-circle py-1"><i class="fa-solid fa-check  p-2 text-success "></i></span>  120GB CDN Bandwidth</p>
+          <p><span  id="success" class="rounded-circle py-1"><i class="fa-solid fa-check  p-2 text-success "></i></span>  5GB Cloud Storage</p>
+          <p><span  id="warn" class="rounded-circle py-1"><i class="fa-solid fa-x  p-2 text-danger "></i></span>   Personal Help Support</p>
+          <p><span  id="warn" class="rounded-circle py-1"><i class="fa-solid fa-x  p-2 text-danger "></i></span>   Enterprise SLA</p>
+         </div>
+         <div class="border border-5 rounded-pill p-2 px-5 mt-4">
+          <h4 class="text-success">Start Basic</h4>
+         </div>
+        </div>
+        <div class="text-center shadow p-5">
+         <div class="d-flex flex-column justify-content-center align-items-center">
+          <h5 class="text-white rounded-pill px-4 py-3" style="background-color: #FF6922;">Best Value</h5>
+          <h1>Standard</h1>
+          <h2>$<span class="display-2 fw-bold">49</span></h2>
+          <p>per user, per month</p>
+         </div>
+         <div class="d-flex flex-column justify-content-start align-items-start">
+         
+          <p><span  id="success" class="rounded-circle py-1"><i class="fa-solid fa-check  p-2 text-success "></i></span>  99.5% Uptime Guarantee</p>
+          <p><span  id="success" class="rounded-circle py-1"><i class="fa-solid fa-check  p-2 text-success "></i></span>  120GB CDN Bandwidth</p>
+          <p><span  id="success" class="rounded-circle py-1"><i class="fa-solid fa-check  p-2 text-success "></i></span>  5GB Cloud Storage</p>
+          <p><span  id="success" class="rounded-circle py-1"><i class="fa-solid fa-check  p-2 text-success "></i></span>   Personal Help Support</p>
+          <p><span  id="warn" class="rounded-circle py-1"><i class="fa-solid fa-x  p-2 text-danger "></i></span>   Enterprise SLA</p>
+         </div>
+         <div class=" rounded-pill p-3 px-5 mt-4 bg-success">
+          <h4 class="text-white">Start Standard</h4>
+         </div>
+        </div>
+        <div class="text-center mt-5 pt-3 shadow p-5 mb-5 ">
+          <h1>Platinum</h1>
+          <h2>$<span class="display-2 fw-bold">79</span></h2>
+          <p>2 user, per month</p>
+          <div class="d-flex flex-column justify-content-start align-items-start">
+         
+            <p><span  id="success" class="rounded-circle py-1"><i class="fa-solid fa-check  p-2 text-success "></i></span>  99.5% Uptime Guarantee</p>
+            <p><span  id="success" class="rounded-circle py-1"><i class="fa-solid fa-check  p-2 text-success "></i></span>  120GB CDN Bandwidth</p>
+            <p><span  id="success" class="rounded-circle py-1"><i class="fa-solid fa-check  p-2 text-success "></i></span>  5GB Cloud Storage</p>
+            <p><span  id="success" class="rounded-circle py-1"><i class="fa-solid fa-check  p-2 text-success "></i></span>   Personal Help Support</p>
+            <p><span  id="warn" class="rounded-circle py-1"><i class="fa-solid fa-x  p-2 text-danger "></i></span>   Enterprise SLA</p>
+           </div>
+           <div class="border border-5 rounded-pill p-2 px-5 mt-4">
+            <h4 class="text-success">Start Platinum</h4>
+           </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div id="pricing-img">
+        <div id="pricing-blur">
+          <div>
+            <h5>Contact Us</h5>
+            <h1>Get Helps & Friendly Support</h1>
+          </div>
+        </div>
+      </div>
+      <div class="mx-4 px-5">
+        <div class=" m-5 p-5 shadow ">
+          <form action="" class="">
+            <h6 for="" class="">Fillup The Form</h6>
+           <div class="d-flex gap-3 mb-3 mt-4 pt-2">
+            <input type="text" placeholder="Name" class="form-control  ">
+            <input type="text" placeholder="Email" class="form-control">
+           </div>
+            <input type="text"  placeholder="Subject" class="form-control mb-3">
+            <textarea name="" id="" cols="30" rows="5" class="form-control mb-3"></textarea>
+            <button class="btn btn-Success rounded bg-success text-white py-3 px-4 ">Submit Request</button>
+          </form>
+          </div>
+      </div>
+    </section>
+    <footer>
+      <div class="bg-success text-white d-flex justify-content-between px-5 align-items-center py-4">
+        <div class="ps-5 ms-3">
+          <h1>Do You Have Questions ?</h1>
+          <h6>We'll help you to grow your career and growth.</h6>
+        </div>
+        <div class="me-4">
+          <div class="bg-white border-5 border rounded-pill p-3 px-5 me-5">
+            <h5 class="text-success">Conatct Us Today</h5>
+           </div>
+        </div>
+      </div>
+      <div id="footer">
+         <div class="d-flex justify-content-center text-white pt-5">
+          <div>
+            <img src="images/logo-light.png" alt="" width="25%">
+            <h3 class="mt-3">Do You Need Help With Anything?</h3>
+            <p class="text-secondary mt-4">Receive updates, hot deals, tutorials, discounts sent straignt in your <br> inbox every month</p>
+           <div class="row">
+            <input type="text" placeholder="Email Address" class="col-9 rounded py-3 mt-3"><button class="mt-3 rounded col-3 btn btn-success ">Subscribe</button>
+           </div>
+          </div>
+          <div class="ms-5 me-5 mb-5">
+            <h5>LAYOUTS</h5>
+            <ul class="text-secondary ms-0 ps-0">
+              <li class="py-3">Home Page</li>
+              <li class="py-3">About Page</li>
+              <li class="py-3">Service Page</li>
+              <li class="py-3">Property Page</li>
+              <li class="py-3">Contact Page</li>
+              <li class="py-3">Single Blog</li>
+            </ul>
+          </div>
+          <div class="ms-5 me-5">
+            <h5>ALL SECTIONS</h5>
+            <ul class="text-secondary ms-0 ps-0">
+              <li class="py-3">Headers</li>
+              <li class="py-3">Features</li>
+              <li class="py-3">Attractive</li>
+              <li class="py-3">Testimonials</li>
+              <li class="py-3">Videos</li>
+              <li class="py-3">Footers</li>
+            </ul>
+          </div>
+          <div class="ms-5 ">
+            <h5>COMPANY</h5>
+            <ul class="text-secondary ms-0 ps-0">
+              <li class="py-3">About</li>
+              <li class="py-3">Blog</li>
+              <li class="py-3">Pricing</li>
+              <li class="py-3">Affiliate</li>
+              <li class="py-3">Login</li>
+              <li class="py-3">Changelog</li>
+            </ul>
+          </div>
+         </div>
+        
+        <div class="border-top border-1 border-secondary p-4">
+          <footer class=" fs-5 text-secondary text-center">
+            © 2021 RentUP. Designd By GorkCoder.
+          </footer>
+        </div>
+      </div>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>

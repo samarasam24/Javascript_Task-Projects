@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="crud-op.css">
+    <title>Table</title>
+</head>
+<body class="d-flex flex-column align-items-center pt-5 " id="tabbody">
+    <button class="btn btn-primary mb-5" onclick="returnPage()">  Back</button>
+    <table class="table border border-dark text-center w-50 h-100 text-white">
+        <thead >
+            <tr>
+                <th  class="border border-dark">S.No</th>
+                <th  class="border border-dark">Name</th>
+                <th  class="border border-dark">Password</th>
+                <th  class="border border-dark">Action</th>
+            </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+    </table>
+    <script src="table.js"></script>
+</body>
+</html>

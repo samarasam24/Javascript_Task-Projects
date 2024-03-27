@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scientific Calculator</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        height: 100vh;
+        background-image: url(download.jpg);
+      }
+      #div {
+        box-shadow: 0px 0px 22px black;
+      }
+      input:first-child {
+        box-shadow: 0px 0px 7px 2px black;
+      }
+      input {
+        box-shadow: 0px 0px 5px black;
+      }
+      input:hover {
+        background-color: white;
+        box-shadow: inset 0px 0px 5px black;
+      }
+      #calc {
+        color: blanchedalmond;
+        text-shadow: 5px 6px 5px black;
+      }
+    </style>
+  </head>
+  <body class="d-flex justify-content-center align-items-center">
+    <div
+      class="container d-flex flex-column pt-4 w-25 pb-5 gap-3 border border-3 rounded border-white"
+      id="div"
+    >
+      <h1 id="calc" class="text-center">Calculator</h1>
+      <div class="input-group">
+        <input
+          type="text"
+          id="input"
+          class="form-control text-end m-3"
+          placeholder="0"
+        />
+      </div>
+      <div class="row row-cols-6 gap-2 justify-content-center mt-4">
+        <input
+          class="p-2 py-3 rounded-circle"
+          type="button"
+          value="sin"
+          onclick="trigFunction('sin')"
+        />
+        <input
+          class="rounded-circle"
+          type="button"
+          value="cos"
+          onclick="trigFunction('cos')"
+        />
+        <input
+          class="rounded-circle"
+          type="button"
+          value="tan"
+          onclick="trigFunction('tan')"
+        />
+        <input
+          class="rounded-circle"
+          type="button"
+          value="sqrt"
+          onclick="sqrtFunction('sqrt')"
+        />
+        <input
+          class="rounded-circle"
+          type="button"
+          value="1"
+          onclick="getNumber('1')"
+        />
+        <input
+          class="p-2 py-3 rounded-circle"
+          type="button"
+          value="2"
+          onclick="getNumber('2')"
+        />
+        <input
+          class="rounded-circle"
+          type="button"
+          value="3"
+          onclick="getNumber('3')"
+        />
+        <input
+          class="rounded-circle"
+          type="button"
+          value="-"
+          onclick="getNumber('-')"
+        />
+        <input
+          class="rounded-circle"
+          type="button"
+          value="4"
+          onclick="getNumber('4')"
+        />
+        <input
+          class="p-2 py-3 rounded-circle"
+          type="button"
+          value="5"
+          onclick="getNumber('5')"
+        />
+        <input
+          class="rounded-circle"
+          type="button"
+          value="6"
+          onclick="getNumber('6')"
+        />
+        <input
+          class="rounded-circle"
+          type="button"
+          value="+"
+          onclick="getNumber('+')"
+        />
+        <input
+          class="rounded-circle"
+          type="button"
+          value="7"
+          onclick="getNumber('7')"
+        />
+        <input
+          class="rounded-circle p-2 py-3"
+          type="button"
+          value="8"
+          onclick="getNumber('8')"
+        />
+        <input
+          class="rounded-circle"
+          type="button"
+          value="9"
+          onclick="getNumber('9')"
+        />
+        <input
+          class="rounded-circle"
+          type="button"
+          value="*"
+          onclick="getNumber('*')"
+        />
+        <input
+          class="rounded-circle"
+          type="button"
+          value="0"
+          onclick="getNumber('0')"
+        />
+        <input
+          class="p-2 py-3 rounded-circle"
+          type="button"
+          value="%"
+          onclick="getPercentage('%')"
+        />
+        <input
+          class="p-2 rounded-circle"
+          type="button"
+          value="^"
+          onclick="handleExponentiation('^')"
+        />
+
+        <input
+          class="rounded-circle"
+          type="button"
+          value="/"
+          onclick="getNumber('/')"
+        />
+        <input
+          class="p-3 bg-danger rounded-circle"
+          type="button"
+          value="DEL"
+          onclick="del()"
+        />
+        <input
+          class="rounded-circle"
+          type="button"
+          value="AC"
+          onclick="cleared()"
+        />
+        <input
+          class="rounded-circle"
+          type="button"
+          value="."
+          onclick="getNumber('.')"
+        />
+        <input
+          class="rounded-circle"
+          type="button"
+          value="("
+          onclick="getNumber('(')"
+        />
+        <input
+          class="rounded-circle"
+          type="button"
+          value=")"
+          onclick="getNumber(')')"
+        />
+        <input
+          class="rounded-circle"
+          type="button"
+          value="log"
+          onclick="logFunction('log')"
+        />
+        <input
+          class="rounded-circle"
+          type="button"
+          value="exp"
+          onclick="expFunction('exp')"
+        />
+        <input
+          class="rounded-circle"
+          type="button"
+          value="abs"
+          onclick="absFunction('abs')"
+        />
+        <input
+          class="rounded-circle"
+          type="button"
+          value="!"
+          onclick="factorialFunction('!')"
+        />
+
+        <input
+          class="bg-warning rounded-circle p-3"
+          type="button"
+          value="="
+          onclick="sum();calculateResult();"
+        />
+      </div>
+    </div>
+    <script>
+      function getNumber(numbValue) {
+        document.getElementById("input").value += numbValue;
+      }
+      function sum() {
+        const getNumb = document.getElementById("input").value;
+        const result = new Function("return " + getNumb);
+        document.getElementById("input").value = result();
+      }
+      function del() {
+        let deleteLast = document.getElementById("input").value;
+        let delUpdate = deleteLast.slice(-0, -1);
+        document.getElementById("input").value = delUpdate;
+      }
+      function cleared() {
+        document.getElementById("input").value = "";
+      }
+      function sqrtFunction() {
+        const getNumb = document.getElementById("input").value;
+        const result = new Function("return " + getNumb);
+        document.getElementById("input").value = Math.sqrt(result());
+      }
+      function trigFunction(trigValue) {
+        const getTrig = document.getElementById("input").value;
+        const results = new Function("return " + getTrig);
+        const result = Math[trigValue](results());
+        document.getElementById("input").value = result;
+      }
+      function getPercentage() {
+        const percent = document.getElementById("input").value;
+        const result = new Function("return " + percent / 100);
+        document.getElementById("input").value = result();
+      }
+      function logFunction() {
+        const getNumb = document.getElementById("input").value;
+        const result = new Function("return " + getNumb);
+        document.getElementById("input").value = Math.log(result());
+      }
+      function expFunction() {
+        const getNumb = document.getElementById("input").value;
+        const result = new Function("return " + getNumb);
+        document.getElementById("input").value = Math.exp(result());
+      }
+      function absFunction() {
+        const getNumb = document.getElementById("input").value;
+        const result = new Function("return " + getNumb);
+        document.getElementById("input").value = Math.abs(result());
+      }
+      function factorialFunction() {
+        const getNumb = document.getElementById("input").value;
+        const result = new Function("return " + getNumb);
+
+        function factorial(n) {
+          if (n === 0 || n === 1) {
+            return 1;
+          } else {
+            return n * factorial(n - 1);
+          }
+        }
+
+        document.getElementById("input").value = factorial(result());
+      }
+      function handleExponentiation(numbValue) {
+        const inputField = document.getElementById("input");
+
+        // Handling exponentiation
+        if (numbValue === "^") {
+          inputField.value += "**";
+        } else {
+          inputField.value += numbValue;
+        }
+      }
+
+      function calculateResult() {
+        let getNumb = document.getElementById("input").value;
+
+        // Replace '^' with '**' for exponentiation
+        getNumb = getNumb.replace(/\^/g, "**");
+
+        const result = new Function("return " + getNumb);
+        document.getElementById("input").value = result();
+      }
+    </script>
+  </body>
+</html>

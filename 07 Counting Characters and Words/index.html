@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counting Characters and Words</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
+      }
+      div {
+        display: grid;
+        gap: 10px;
+      }
+      input {
+        padding: 0.4rem 1rem;
+        border: 1px solid grey;
+        border-radius: 5px;
+      }
+      button {
+        border: 1px solid grey;
+        border-radius: 5px;
+        padding: 0.5rem 1.5rem;
+        justify-self: center;
+      }
+      #error {
+        display: none;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding: opx;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <label for="about">Hobby:</label>
+      <input type="text" id="hobby" placeholder="Your Hobby" />
+      <p id="error"></p>
+      <button onclick="submit()">Submit</button>
+    </div>
+    <script>
+      function submit() {
+        let error = document.getElementById("error");
+        let hobby = document.getElementById("hobby").value;
+        !hobby
+          ? `${
+              ((error.innerHTML = "*Required..."),
+              (error.style.display = "block"),
+              (error.style.color = "red"))
+            }`
+          : `${(error.style.display = "none")}`;
+        console.log("Sentence:", hobby);
+        let wordCount = hobby.length;
+        console.log("Characters:", wordCount);
+        let words = hobby.split(" ");
+        console.log("Array:", words);
+        console.log("Word Count:", words.length);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Extracting and Manipulating Substrings</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      input {
+        padding: 0.4rem 1rem;
+        border: 1px solid grey;
+        border-radius: 5px;
+      }
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      button {
+        border: 1px solid grey;
+        border-radius: 7px;
+        padding: 0.5rem 1rem;
+        align-self: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>
+      Name first three letter and animal last letter combined in it's result
+    </h3>
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Enter Your Name" />
+      <label for="animal">Favorite Animal: </label>
+      <input type="text" placeholder="Enter Favorite Animal" id="animal" />
+      <button type="button" onclick="submit()">Submit</button>
+    </div>
+    <script>
+      function submit() {
+        let name = document.getElementById("name").value;
+        let animal = document.getElementById("animal").value;
+        console.log("UserName & AnimalName :", name + "&" + animal);
+        let updatedName = name.substring(0, 3);
+        console.log("Extracted UserName:", updatedName);
+        let updatedAnimal = animal.substring(animal.length - 2, animal.length);
+        console.log("Extracted AnimalName:", updatedAnimal);
+        alert(`${"Result : "}${updatedName}${updatedAnimal}`);
+        document.getElementById("name").value = "";
+        document.getElementById("animal").value = "";
+      }
+    </script>
+  </body>
+</html>

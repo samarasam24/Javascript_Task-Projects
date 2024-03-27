@@ -1,0 +1,18 @@
+In HTML crate a  Heading Tag , Input Tag , Button Tag and Empty Div Tag.
+The Empty Div Tag for Showing the paragragph.
+Give a ID for Input and Div Tag and Style them as you like.
+
+Next in Javascript Create a array with atleast 10 Paragragph.Each should be an element in the array.
+Create a Varibles for Storing the Input ,Button and the Empty Div.
+Get The Button with queryselector and others with getelementbyid.
+After,Write a eventlistener for Button.
+Inside a eventlistener Create a Varible for Storing the Value of input.
+And Write a condition for Shuffling and Non Shuffling . The condition must be like if the value is 0 or above the Array length then the paragragph should print in shuffle else it will print the paragragph equal to the input value.
+In the if condition Create a Varible for Storing a random Number.the random Number value is get by using math.random,math.floor and array.length
+After geting the random Number write empty div varible name and .innerhtml for printing thr paragragph in html the value for the innerhtml is array name with array bracket inside the array bracket write the random variable name.
+In the Else condition crate a variable for storing the paragragph that equal to input value for doing this you need use array slice method in the value storing side like 0 startindex and endindex is the value you get with input
+And create Empty Varible .
+After creting empty Write for loop code for looping the paragraphs 
+inside write the empty variable name and create a paragragph tag using backtick inside that paragragph tag use dollar symbol with curly bracket inside curly bracket write the variable name you stored with a slice method with array bracket and write a i inside the bracket .
+print the variable that having the paragragph in the empty div variable name .
+    

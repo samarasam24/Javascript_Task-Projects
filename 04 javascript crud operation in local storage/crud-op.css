@@ -1,0 +1,30 @@
+#body{
+    background-image: linear-gradient(45deg,rgb(128, 115, 0),rgba(0, 255, 106, 0.884),rgba(0, 162, 255, 0.884));
+}
+#tabbody{
+    background-image: linear-gradient(45deg,rgb(228, 224, 9),rgba(238, 109, 3, 0.788));
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+form{
+    box-shadow: 0px 0px 15px 2px  black;
+    background-image: linear-gradient(95deg,rgb(128, 68, 0),rgba(0, 102, 255, 0.884));
+}
+table{
+    background-image: linear-gradient(-15deg,rgb(128, 68, 0),rgba(0, 255, 55, 0.884));
+    text-shadow: 4px 4px 8px black;
+    box-shadow: 0px 0px 8px 1px black;
+}
+input:focus{
+    outline: none;
+    box-shadow: 0px 0px 5px white;
+}
+input:focus::placeholder{
+    color: darkslategrey;
+    position: absolute;
+    font-size: 0.8rem;
+    top: 0px;
+}
+.error{
+    text-shadow: 5px 5px 6px black;
+}

@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li,a{
+    color: white;
+    list-style: none;
+    text-decoration: none;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+    background-color: cornflowerblue;
+    color: white;
+}
+.list{
+    display: flex;
+    gap: 2rem;
+}
+.menu{
+    display: none;
+}
+@media only screen and (max-width:768px){
+    .list{
+        display: none;
+    }
+       
+    .menu{
+        display: block;
+        padding: 5px;
+    }
+   .active{
+        display: block;
+    }
+    nav{
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+}

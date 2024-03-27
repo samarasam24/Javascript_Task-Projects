@@ -1,0 +1,86 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+header{
+    padding-bottom: 100px;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    align-items: center;
+    height: 10vh;
+    width: 100vw;
+    font-size: 25px;
+    font-weight: 900;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: burlywood;
+    color: brown;
+}
+
+h2{
+    text-align: center;
+    font-size: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#products{
+    display: grid;
+    grid-template-columns: repeat(3, 0.2fr);
+    justify-content: space-around;
+    align-items: center;
+    height: 80vh;
+}
+#product{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+.content{
+    border: 1px solid black;
+    width: fit-content;
+    display: grid;
+    row-gap: 30px;
+    text-align: center;
+    grid-template-rows:auto auto auto;
+    justify-content: center;
+}
+button{
+    width: 130px;
+    place-self: center;
+    padding: 5px;
+    border: 1px solid grey;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+table, th, td{
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 15px 40px;
+}
+.table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#wishlist{
+    display: grid;
+    grid-template-columns: repeat(1, 0.2fr);
+    margin-left: 30px;
+
+}
+#wish-head{
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+.product{
+    border: 1px solid black;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.product button{
+    margin-top: 5px;
+}

@@ -19,3 +19,4 @@ document.getElementById("myform").addEventListener("submit",
     event.preventDefault();
   }
 });
+const checkBranch = "branch creation"

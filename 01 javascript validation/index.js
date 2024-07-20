@@ -1,21 +1,28 @@
-document.getElementById("myform").addEventListener("submit",
- function (event) {
-  document.getElementById("username").innerHTML = "";
-  document.getElementById("nameerrormsg").innerHTML = "";
-  var name = document.getElementById("username").value;
-  if (name == "") {
-    document.getElementById("nameerrormsg").innerHTML = "Name Is  Required";
-    event.preventDefault();
-    document.getElementById("nameerrormsg").style.color="red"
-  }
+const form = document.getElementById('myform');
+let userName = document.getElementById('username');
+let password = document.getElementById('password'); 
+let nameError = document.getElementById('nameerrormsg');
+let passwordError = document.getElementById('passworderrormsg');
 
-  document.getElementById("password").innerHTML = "";
-  document.getElementById("passworderrormsg").innerHTML = "";
-  var password = document.getElementById("password").value;
-  if (password == "") {
-    document.getElementById("passworderrormsg").innerHTML =
-      "Password Is Required";
-      document.getElementById("passworderrormsg").style.color="red"
-    event.preventDefault();
-  }
+form.addEventListener('submit',(event) => {
+  event.preventDefault();  
+
+    if( userName.value ===  ""){
+      nameError.innerHTML = 'Name is required*'; 
+      nameError.style.color = '#e74646';
+    };
+
+    if(password.value === "") { 
+      passwordError.innerHTML='Password is required*';
+      passwordError.style.color = '#e74646';
+    };
+
+    if( userName.value !==  ""){
+      nameError.innerHTML = '';
+    };
+
+    if( password.value !==  ""){
+      passwordError.innerHTML = '';
+    };
+
 });
